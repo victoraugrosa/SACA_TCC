@@ -9,9 +9,25 @@
       <a class="nav-link btn btn-outline-danger" style="color: black; margin-bottom:5px;" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Conta</a>
       <a class="nav-link btn btn-outline-danger" style="color: black; margin-bottom:5px;" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Sair</a>
     </div>
-    
+  </div>
+  
+  <div class="col-10">
+  <button onclick="getLocation()">Teste</button>
+  <br>
   </div>
 </div>
+
+<div class="row" style="text-align: center; margin-top:10%; margin-left:10px; font-size:18px;">
+<div class="col-4">
+
+    <p id="demo">gdgfdg</p>
+</div>
+</div>
+
+
+
+
+        
 <!--
 <div class="container">
     <div class="row justify-content-center">

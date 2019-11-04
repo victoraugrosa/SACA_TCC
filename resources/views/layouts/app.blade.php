@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/localizacao.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4sS_67M3mixo3bv5K1AGJEpGe1AWqcxE&callback=myMap"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
