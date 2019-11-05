@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<script>
+    
+
+</script>
+
 <div class="row" style="text-align: center; margin-top:10%; margin-left:10px; font-size:18px;">
   <div class="col-1 bg-white" style="border-width:1px; border-style:solid; border-radius:20px; border-color:black;">
     <div class="nav flex-column nav-pills" style="  margin-top: 10px; margin-bottom: 10px;"id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -18,11 +23,11 @@
 </div>
 
 <div class="row" style="text-align: center; margin-top:10%; margin-left:10px; font-size:18px;">
-<div class="col-4">
+<div class="col-10">
+    <div id="mapholder"></div>
+</div>
+</div>
 
-    <p id="demo">gdgfdg</p>
-</div>
-</div>
 
 
 

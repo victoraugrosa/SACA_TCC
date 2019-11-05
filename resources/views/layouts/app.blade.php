@@ -12,7 +12,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/localizacao.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4sS_67M3mixo3bv5K1AGJEpGe1AWqcxE&callback=myMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT0fxqbrwBLI6dkmMDbmNfQFJ3KjjFBpM&callback=initMap"
+  type="text/javascript"></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -80,5 +82,6 @@
             @yield('content')
         </main>
     </div>
+    
 </body>
 </html>
