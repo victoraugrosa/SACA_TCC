@@ -1,4 +1,4 @@
-var texto = document.getElementById("demo");
+var texto = document.getElementById("error_text");
 
 function getLocation(){
   if(navigator.geolocation){
@@ -8,25 +8,24 @@ function getLocation(){
     texto.innerHTML = "Navegador não tem suporte a Geolocalização";
   }
 }
-function showPosition(position){
-  /*alert("Latitude: " + position.coords.latitude +
-  "\nLongitude: " + position.coords.longitude);*/
 
-  lat=position.coords.latitude;
-  lon=position.coords.longitude;
-  latlon=new google.maps.LatLng(lat, lon)
-  mapholder=document.getElementById('mapholder')
-  mapholder.style.height='250px';
-  mapholder.style.width='500px';
+function showPosition(position){
+  lati=position.coords.latitude;
+  long=position.coords.longitude;
+  latilong=new google.maps.LatLng(lati, long)
+  viewmap=document.getElementById('viewmap')
+  viewmap.style.height='250px';
+  viewmap.style.width='500px';
+  viewmap.style.align='center';
  
   var myOptions={
-  center:latlon,zoom:14,
+  center:latilong,zoom:18,
   mapTypeId:google.maps.MapTypeId.ROADMAP,
   mapTypeControl:false,
   navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
   };
-  var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
-  var marker=new google.maps.Marker({position:latlon,map:map,title:"Você está Aqui!"});
+  var map=new google.maps.Map(document.getElementById("viewmap"),myOptions);
+  var marker=new google.maps.Marker({position:latilong,map:map,title:"Você está Aqui!"});
 
 
 

@@ -24,7 +24,8 @@
 
 <div class="row" style="text-align: center; margin-top:10%; margin-left:10px; font-size:18px;">
 <div class="col-10">
-    <div id="mapholder"></div>
+    <p id="error_text"></p>
+    <div id="viewmap"></div>
 </div>
 </div>
 
