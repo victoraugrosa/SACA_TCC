@@ -13,6 +13,7 @@ function showPosition(position){
   lati=position.coords.latitude;
   long=position.coords.longitude;
   latilong=new google.maps.LatLng(lati, long)
+
   viewmap=document.getElementById('viewmap')
   viewmap.style.height='250px';
   viewmap.style.width='500px';
