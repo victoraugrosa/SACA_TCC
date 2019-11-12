@@ -15,6 +15,15 @@ class CriarTabelaLocalizacao extends Migration
     {
         Schema::create('Localizacao', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('lat_inic', 300);
+            $table->string('lat_fim', 300);
+            $table->string('long_inic', 300);
+            $table->string('long_fim', 300);
+
+            /*$table->integer('idPeriodo')->unsigned();
+            $table->foreign('idPeriodo')->references('id')->on('Periodo');*/
+
             $table->timestamps();
         });
     }

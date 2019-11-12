@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CriarTabelaContato extends Migration
+class AddForeignTableUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,8 @@ class CriarTabelaContato extends Migration
      */
     public function up()
     {
-        Schema::create('Contato', function (Blueprint $table) {
-            $table->bigIncrements('id');
-
-            $table->string('email', 200);
-            $table->char('ddd', 2);
-            $table->char('celular', 9);
-            
-
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            //
         });
     }
 
@@ -32,6 +25,8 @@ class CriarTabelaContato extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Contato');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

@@ -15,6 +15,12 @@ class CriarTabelaPeriodo extends Migration
     {
         Schema::create('Periodo', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->date('data_inicio');
+            $table->date('data_fim');
+            $table->time('hora_inicio');
+            $table->time('hora_fim');
+            
             $table->timestamps();
         });
     }

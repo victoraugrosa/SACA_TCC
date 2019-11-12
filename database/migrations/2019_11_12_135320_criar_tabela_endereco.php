@@ -15,6 +15,16 @@ class CriarTabelaEndereco extends Migration
     {
         Schema::create('Endereco', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->char('CEP', 8);
+            $table->string('rua', 100);
+            $table->integer('numero')->nullable();
+            $table->string('complemento', 100)->nulllable();
+            $table->string('bairro', 100);
+            $table->string('cidade', 100);
+            $table->char('estado', 2);
+            $table->string('pais', 100);
+            
             $table->timestamps();
         });
     }
