@@ -23,11 +23,6 @@ class CriarTabelaUsuaria extends Migration
             $table->integer('raca');
             $table->date('data_nasc');
             $table->integer('tipo_user');
-        
-            /*$table->integer('idContato')->unsigned();
-            $table->foreign('idContato')->references('id')->on('Contato');
-            $table->integer('idEndereco')->unsigned();
-            $table->foreign('idEndereco')->references('id')->on('Endereco');*/
 
             $table->timestamps();
         });

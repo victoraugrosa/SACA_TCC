@@ -18,9 +18,6 @@ class CriarTabelaAudio extends Migration
 
             $table->integer('idAudio_comp');
             $table->binary('arquivo');
-
-            /*$table->integer('idDenuncia')->unsigned();
-            $table->foreign('idDenuncia')->references('id')->on('Denuncia');*/
             
             $table->timestamps();
         });

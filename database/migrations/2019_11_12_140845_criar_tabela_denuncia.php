@@ -18,13 +18,6 @@ class CriarTabelaDenuncia extends Migration
 
             $table->integer('tipo_violencia');
 
-            /*$table->integer('idLocal')->unsigned();
-            $table->foreign('idLocal')->references('id')->on('Localizacao');
-            $table->integer('idPeriodo')->unsigned();
-            $table->foreign('idPeriodo')->references('id')->on('Periodo');
-            $table->integer('idLogin')->unsigned();
-            $table->foreign('idLogin')->references('id')->on('users');*/
-
             $table->timestamps();
         });
     }

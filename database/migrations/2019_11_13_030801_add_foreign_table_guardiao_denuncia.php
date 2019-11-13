@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignTableUsers extends Migration
+class AddForeignTableGuardiaoDenuncia extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class AddForeignTableUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->bigInteger('idUsuaria')->unsigned();
-            $table->foreign('idUsuaria')->references('id')->on('Usuaria');
-            //
+        Schema::table('Guardiao', function (Blueprint $table) {
+            $table->bigInteger('idLogDen')->unsigned();
+            $table->foreign('idLogDen')->references('idLogin')->on('Denuncia');
         });
     }
 
@@ -27,7 +26,7 @@ class AddForeignTableUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('Guardiao', function (Blueprint $table) {
             //
         });
     }

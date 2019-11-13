@@ -21,9 +21,6 @@ class CriarTabelaLocalizacao extends Migration
             $table->string('long_inic', 300);
             $table->string('long_fim', 300);
 
-            /*$table->integer('idPeriodo')->unsigned();
-            $table->foreign('idPeriodo')->references('id')->on('Periodo');*/
-
             $table->timestamps();
         });
     }
