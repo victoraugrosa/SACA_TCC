@@ -14,11 +14,15 @@ class UsuariaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function formulario()
-    {
-        
-        
+    private $usuaria;
 
+    public function __construct(UsuariaModel $usuaria)
+    {
+        $this->usuaria = $usuaria;
+    }
+
+    public function formulario()
+    {    
         return view('cadastro_inic');
     }
 
@@ -91,5 +95,12 @@ class UsuariaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function prox_form(Request $request)
+    {
+        $email = $request->only(['email']);
+
+        return $email;
     }
 }

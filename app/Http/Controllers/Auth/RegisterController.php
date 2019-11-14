@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+//adicionados
+use Illuminate\Http\Request;
+
 class RegisterController extends Controller
 {
     /*
@@ -68,5 +71,12 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function prox_form(Request $request)
+    {
+        $email = $request->only(['email']);
+
+        return $email;
     }
 }

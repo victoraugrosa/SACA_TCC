@@ -22,6 +22,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/card_style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -49,7 +50,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('usuaria.formulario') }}">Cadastrar-se</a>
+                                    <a class="nav-link" href="{{ route('register') }}">Cadastrar-se</a>
                                 </li>
                             @endif
                         @else
