@@ -77,6 +77,6 @@ class RegisterController extends Controller
     {
         $email = $request->only(['email']);
 
-        return $email;
+        return view('cadastro_inic',['email'=>$email]);
     }
 }
