@@ -44,12 +44,13 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item d-flex justify-content-between align-items-center"><b>Localização enviada para autoridades</b><span class="material-icons">check_circle</span></li><!--Descrição+Ícone check Material Design-->
                     <li class="list-group-item d-flex justify-content-between align-items-center"><b>Localização enviada para guardiões</b><span class="material-icons">check_circle</span></li><!--Descrição+Ícone check Material Design-->
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><b>Iniciando gravação de áudio</b><span style="transition-duration: 5s;" class="spinner-border spinner-border-sm"><span class="material-icons">check_circle</span></span></li><!--Descrição+Ícone check Material Design-->
                 </ul>
-                
             </div>
         
             <!--Rodapé Modal-->
             <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-circle btn-xl">teste</button>
             </div>
         </div>
     </div>
