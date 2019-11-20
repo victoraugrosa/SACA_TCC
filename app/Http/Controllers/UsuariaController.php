@@ -26,6 +26,11 @@ class UsuariaController extends Controller
         return view('cadastro_inic');
     }
 
+    public function adm_home()
+    {
+        return view('home_adm');
+    }
+
     public function index()
     {
         //

@@ -17,9 +17,10 @@
   </div>
   
   <div class="col-10">
-  <button onclick="getLocation()">Teste</button>
+  <button onclick="getLocation()" data-toogle="modal" data-target="#ModalDenuncia">Teste</button>
   <br>
-  </div>
+
+  
 </div>
 
 <div class="row" style="text-align: center; margin-top:10%; margin-left:10px; font-size:18px;">

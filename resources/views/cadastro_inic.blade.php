@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg bg-dark text-white" id="card_header">{{ __('Registro') }}</div>
+                <div class="card-header bg bg-dark text-white" id="card_header">{{ __('Cadastros Iniciais') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -82,12 +82,55 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme a senha') }}</label>
+                            <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Raça') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" disabled type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <select id="raca" class="form-control @error('raca') is-invalid @enderror" name="raca" value="" required autocomplete="raca">
+                                    <option value="negra">Negra</option>
+                                    <option value="amarela">Amarela</option>
+                                    <option value="branca">Branca</option>
+                                    <option value="indigena">Índigena</option>
+                                </select>
+                                @error('raca')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
+
+                        <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Estado civil') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="estado_civil" class="form-control @error('estado_civil') is-invalid @enderror" name="estado_civil" value="" required autocomplete="estado_civil">
+                                    <option value="solteira">Solteira</option>
+                                    <option value="casada">Casada</option>
+                                    <option value="viuva">Viúva</option>
+                                    <option value="divorciada">Divorciada</option>
+                                </select>
+                                @error('estado_civil')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto de Perfil') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ (' Insira uma foto')}}" required autocomplete="foto">
+
+                                @error('foto')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

@@ -23,3 +23,5 @@ Route::get('/formulario', 'UsuariaController@formulario');
 
 Route::get('/prox_form', 'Auth\RegisterController@prox_form')->name('prox_form');
 
+Route::get('/home_adm', 'UsuariaController@adm_home')->name('home_adm');
+
