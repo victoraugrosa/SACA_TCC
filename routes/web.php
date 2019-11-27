@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/formulario', 'UsuariaController@formulario');
+Route::resource('formulario', 'UsuariaController');
 
 Route::get('/prox_form', 'Auth\RegisterController@prox_form')->name('prox_form');
 

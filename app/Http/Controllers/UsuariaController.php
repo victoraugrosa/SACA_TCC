@@ -23,7 +23,7 @@ class UsuariaController extends Controller
 
     public function formulario()
     {    
-        return view('cadastro_inic');
+        //return view('cadastro_inic');
     }
 
     public function adm_home()
@@ -33,7 +33,7 @@ class UsuariaController extends Controller
 
     public function index()
     {
-        //
+        return view('cadastro_inic');
     }
 
     /**

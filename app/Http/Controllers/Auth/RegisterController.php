@@ -75,8 +75,7 @@ class RegisterController extends Controller
 
     public function prox_form(Request $request)
     {
-        $email = $request->only(['email']);
-
-        return view('cadastro_inic',['email'=>$email]);
+        //$route = Route::formulario();
+        return redirect()->route('formulario');
     }
 }

@@ -98,9 +98,10 @@
                                 @enderror
                             </div>
                         </div>
-
+                        
+                        <div class="form-group row">
                         <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Estado civil') }}</label>
-
+                            
                             <div class="col-md-6">
                                 <select id="estado_civil" class="form-control @error('estado_civil') is-invalid @enderror" name="estado_civil" value="" required autocomplete="estado_civil">
                                     <option value="solteira">Solteira</option>
