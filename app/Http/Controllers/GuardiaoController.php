@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Guardiao;
 
 class GuardiaoController extends Controller
 {
@@ -12,6 +13,14 @@ class GuardiaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $guardiao;
+
+    public function __construct(Guardiao $guardiao)
+    {
+        $this->guardiao = $guardiao;
+    }
+
     public function index()
     {
         //

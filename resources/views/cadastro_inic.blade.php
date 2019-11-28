@@ -8,14 +8,14 @@
                 <div class="card-header bg bg-dark text-white" id="card_header">{{ __('Cadastros Iniciais') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('formulario.store') }}">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" disabled type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="nome"  type="text" class="form-control @error('name') is-invalid @enderror" name="nome" value= "" required autocomplete="nome" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" disabled type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ session('email') }}" required autocomplete="email">
+                                <input id="email"  type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ session('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -86,10 +86,10 @@
 
                             <div class="col-md-6">
                                 <select id="raca" class="form-control @error('raca') is-invalid @enderror" name="raca" value="" required autocomplete="raca">
-                                    <option value="negra">Negra</option>
-                                    <option value="amarela">Amarela</option>
-                                    <option value="branca">Branca</option>
-                                    <option value="indigena">Índigena</option>
+                                    <option value="1">Negra</option>
+                                    <option value="2">Amarela</option>
+                                    <option value="3">Branca</option>
+                                    <option value="4">Índigena</option>
                                 </select>
                                 @error('raca')
                                     <span class="invalid-feedback" role="alert">
@@ -104,10 +104,10 @@
                             
                             <div class="col-md-6">
                                 <select id="estado_civil" class="form-control @error('estado_civil') is-invalid @enderror" name="estado_civil" value="" required autocomplete="estado_civil">
-                                    <option value="solteira">Solteira</option>
-                                    <option value="casada">Casada</option>
-                                    <option value="viuva">Viúva</option>
-                                    <option value="divorciada">Divorciada</option>
+                                    <option value="1">Solteira</option>
+                                    <option value="2">Casada</option>
+                                    <option value="3">Viúva</option>
+                                    <option value="4">Divorciada</option>
                                 </select>
                                 @error('estado_civil')
                                     <span class="invalid-feedback" role="alert">

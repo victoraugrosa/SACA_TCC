@@ -15,7 +15,7 @@ class AddForeignTableDenuncia extends Migration
     {
         Schema::table('denuncia', function (Blueprint $table) {
             $table->bigInteger('idUsers')->unsigned();
-            $table->foreign('idLsers')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('idUsers')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

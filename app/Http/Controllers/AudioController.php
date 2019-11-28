@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Audio;
 
 class AudioController extends Controller
 {
@@ -12,6 +13,14 @@ class AudioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $audio;
+
+    public function __construct(Audio $audio)
+    {
+        $this->audio = $audio;
+    }
+
     public function index()
     {
         //

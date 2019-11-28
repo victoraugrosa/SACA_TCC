@@ -14,6 +14,7 @@ class UsuariaModel extends Model
         'estado_civil',
         'foto',
         'raca',
+        'tipo_user',
         'data_nasc'
     ];
     public function login(){

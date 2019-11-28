@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Denuncia;
 
 class DenunciaController extends Controller
 {
@@ -12,6 +13,13 @@ class DenunciaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $denuncia;
+
+    public function __construct(Denuncia $denuncia)
+    {
+        $this->denuncia = $denuncia;
+    }
     public function index()
     {
         //

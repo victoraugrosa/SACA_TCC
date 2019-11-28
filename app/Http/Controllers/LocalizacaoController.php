@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Localizacao;
 
 class LocalizacaoController extends Controller
 {
@@ -12,6 +13,13 @@ class LocalizacaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $localizacao;
+
+    public function __construct(Localizacao $localizacao)
+    {
+        $this->localizacao = $localizacao;
+    }
     public function index()
     {
         //

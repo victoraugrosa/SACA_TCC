@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Contato;
 
 class ContatoController extends Controller
 {
@@ -12,6 +13,13 @@ class ContatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $contato;
+
+    public function __construct(Contato $contato)
+    {
+        $this->contato= $contato;
+    }
     public function index()
     {
         //

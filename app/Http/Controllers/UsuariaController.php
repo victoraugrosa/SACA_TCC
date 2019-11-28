@@ -52,9 +52,13 @@ class UsuariaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request , UsuariaModel $usuaria)
     {
-        //
+        $dataform = $request->all();
+        $dataform['tipo_user'] = 1;
+        $insert = $usuaria->create($dataform);
+        $nome = $dataform['nome'];
+        return redirect()->route('register')->with(array('name1'=>$nome));
     }
 
     /**

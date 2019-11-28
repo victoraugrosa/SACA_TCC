@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Endereco;
 
 class EnderecoController extends Controller
 {
@@ -12,6 +13,13 @@ class EnderecoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $endereco;
+
+    public function __construct(Endereco $endereco)
+    {
+        $this->endereco = $endereco;
+    }
     public function index()
     {
         //
