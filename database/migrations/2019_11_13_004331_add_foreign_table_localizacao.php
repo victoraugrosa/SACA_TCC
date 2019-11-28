@@ -13,9 +13,9 @@ class AddForeignTableLocalizacao extends Migration
      */
     public function up()
     {
-        Schema::table('Localizacao', function (Blueprint $table) {
-            $table->bigInteger('idPeriodo')->unsigned();
-            $table->foreign('idPeriodo')->references('id')->on('Periodo');
+        Schema::table('localizacao', function (Blueprint $table) {
+            $table->bigInteger('idDenuncia')->unsigned();
+            $table->foreign('idDenuncia')->references('id')->on('denuncia')->onDelete('cascade');
         });
     }
 
@@ -26,7 +26,7 @@ class AddForeignTableLocalizacao extends Migration
      */
     public function down()
     {
-        Schema::table('Localizacao', function (Blueprint $table) {
+        Schema::table('localizacao', function (Blueprint $table) {
             //
         });
     }

@@ -13,7 +13,7 @@ class CriarTabelaEndereco extends Migration
      */
     public function up()
     {
-        Schema::create('Endereco', function (Blueprint $table) {
+        Schema::create('endereco', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->char('CEP', 8);
@@ -36,6 +36,6 @@ class CriarTabelaEndereco extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Endereco');
+        Schema::dropIfExists('endereco');
     }
 }

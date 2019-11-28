@@ -13,7 +13,7 @@ class CriarTabelaContato extends Migration
      */
     public function up()
     {
-        Schema::create('Contato', function (Blueprint $table) {
+        Schema::create('contato', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->string('email', 200);
@@ -32,6 +32,6 @@ class CriarTabelaContato extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Contato');
+        Schema::dropIfExists('contato');
     }
 }

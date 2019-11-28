@@ -15,7 +15,7 @@ class AddForeignTableUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->bigInteger('idUsuaria')->unsigned();
-            $table->foreign('idUsuaria')->references('id')->on('Usuaria');
+            $table->foreign('idUsuaria')->references('id')->on('usuaria')->onDelete('cascade');
             //
         });
     }

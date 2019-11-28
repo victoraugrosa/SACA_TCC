@@ -13,10 +13,11 @@ class CriarTabelaDenuncia extends Migration
      */
     public function up()
     {
-        Schema::create('Denuncia', function (Blueprint $table) {
+        Schema::create('denuncia', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->integer('tipo_violencia');
+            $table->datetime('date_time_fim');
 
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ class CriarTabelaDenuncia extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Denuncia');
+        Schema::dropIfExists('denuncia');
     }
 }

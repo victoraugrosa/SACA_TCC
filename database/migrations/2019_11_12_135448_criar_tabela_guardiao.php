@@ -13,7 +13,7 @@ class CriarTabelaGuardiao extends Migration
      */
     public function up()
     {
-        Schema::create('Guardiao', function (Blueprint $table) {
+        Schema::create('guardiao', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->string('nome', 200);
@@ -30,6 +30,6 @@ class CriarTabelaGuardiao extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Guardiao');
+        Schema::dropIfExists('guardiao');
     }
 }

@@ -13,13 +13,9 @@ class AddForeignTableDenuncia extends Migration
      */
     public function up()
     {
-        Schema::table('Denuncia', function (Blueprint $table) {
-            $table->bigInteger('idLocal')->unsigned();
-            $table->foreign('idLocal')->references('id')->on('Localizacao');
-            $table->bigInteger('idPeriodo')->unsigned();
-            $table->foreign('idPeriodo')->references('id')->on('Periodo');
-            $table->bigInteger('idLogin')->unsigned();
-            $table->foreign('idLogin')->references('id')->on('users');
+        Schema::table('denuncia', function (Blueprint $table) {
+            $table->bigInteger('idUsers')->unsigned();
+            $table->foreign('idLsers')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -30,7 +26,7 @@ class AddForeignTableDenuncia extends Migration
      */
     public function down()
     {
-        Schema::table('Denuncia', function (Blueprint $table) {
+        Schema::table('denuncia', function (Blueprint $table) {
             //
         });
     }

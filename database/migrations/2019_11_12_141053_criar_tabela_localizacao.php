@@ -13,7 +13,7 @@ class CriarTabelaLocalizacao extends Migration
      */
     public function up()
     {
-        Schema::create('Localizacao', function (Blueprint $table) {
+        Schema::create('localizacao', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->string('lat_inic', 300);
@@ -32,6 +32,6 @@ class CriarTabelaLocalizacao extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Localizacao');
+        Schema::dropIfExists('localizacao');
     }
 }

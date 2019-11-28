@@ -13,7 +13,7 @@ class CriarTabelaUsuaria extends Migration
      */
     public function up()
     {
-        Schema::create('Usuaria', function (Blueprint $table) {
+        Schema::create('usuaria', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->string('nome', 200);
@@ -35,6 +35,6 @@ class CriarTabelaUsuaria extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Usuaria');
+        Schema::dropIfExists('usuaria');
     }
 }

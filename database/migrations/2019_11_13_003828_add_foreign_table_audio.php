@@ -13,9 +13,9 @@ class AddForeignTableAudio extends Migration
      */
     public function up()
     {
-        Schema::table('Audio', function (Blueprint $table) {
+        Schema::table('audio', function (Blueprint $table) {
             $table->bigInteger('idDenuncia')->unsigned();
-            $table->foreign('idDenuncia')->references('id')->on('Denuncia');
+            $table->foreign('idDenuncia')->references('id')->on('denuncia')->onDelete('cascade');
         });
     }
 
@@ -26,7 +26,7 @@ class AddForeignTableAudio extends Migration
      */
     public function down()
     {
-        Schema::table('Audio', function (Blueprint $table) {
+        Schema::table('audio', function (Blueprint $table) {
             //
         });
     }

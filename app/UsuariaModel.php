@@ -8,6 +8,7 @@ class UsuariaModel extends Model
 {
     protected $table = 'usuaria';
     protected $fillable = [
+        'id',
         'nome', 
         'CPF',
         'estado_civil',
@@ -15,4 +16,12 @@ class UsuariaModel extends Model
         'raca',
         'data_nasc'
     ];
+    public function login(){
+        return $this->hasOne("App\User", 'idUsuaria');
+
+    }
+    public function contato(){
+        return $this->hasOne("App\Contato", 'idUsuaria');
+
+    }
 }

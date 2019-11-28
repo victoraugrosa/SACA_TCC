@@ -13,13 +13,9 @@ class AddForeignTableGuardiao extends Migration
      */
     public function up()
     {
-        Schema::table('Guardiao', function (Blueprint $table) {
+        Schema::table('guardiao', function (Blueprint $table) {
             $table->bigInteger('idUsuaria')->unsigned();
-            $table->foreign('idUsuaria')->references('id')->on('Usuaria');
-            $table->bigInteger('idContato')->unsigned();
-            $table->foreign('idContato')->references('id')->on('Contato');
-            $table->bigInteger('idDenuncia')->unsigned();
-            $table->foreign('idDenuncia')->references('id')->on('Denuncia');
+            $table->foreign('idUsuaria')->references('id')->on('usuaria')->onDelete('cascade');
         });
     }
 
@@ -30,7 +26,7 @@ class AddForeignTableGuardiao extends Migration
      */
     public function down()
     {
-        Schema::table('Guardiao', function (Blueprint $table) {
+        Schema::table('guardiao', function (Blueprint $table) {
             //
         });
     }
