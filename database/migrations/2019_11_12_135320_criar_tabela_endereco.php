@@ -24,6 +24,9 @@ class CriarTabelaEndereco extends Migration
             $table->string('cidade', 100);
             $table->char('estado', 2);
             $table->string('pais', 100);
+
+            $table->bigInteger('idUsuaria')->unsigned();
+            $table->foreign('idUsuaria')->references('id')->on('usuaria')->onDelete('cascade');
             
             $table->timestamps();
         });

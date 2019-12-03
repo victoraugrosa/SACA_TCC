@@ -19,6 +19,6 @@ class Endereco extends Model
         'idUsuaria'
     ];
     public function usuaria(){
-        return $this->belongsTo("App\UsuariaModel", 'idDenuncia');
+        return $this->belongsTo("App\UsuariaModel", 'idUsuaria');
     }
 }

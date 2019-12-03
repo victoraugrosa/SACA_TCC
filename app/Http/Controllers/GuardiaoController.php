@@ -33,7 +33,7 @@ class GuardiaoController extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastrar_guardiao.blade.php');
     }
 
     /**
@@ -66,7 +66,7 @@ class GuardiaoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('editar_guardiao.blade.php');
     }
 
     /**

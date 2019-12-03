@@ -1,22 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg bg-dark text-white" id="card_header">{{ __('Registro') }}</div>
+                <div class="card-header bg bg-dark text-white" id="card_header">{{ __('Cadastro de Guardião') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('guardiao.store') }}">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{session('nome')}}" required autocomplete="name" autofocus>
+                                <input id="nome"  type="text" class="form-control @error('name') is-invalid @enderror" name="nome" required autocomplete="nome" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -26,15 +25,16 @@
                             </div>
                         </div>
 
-                        <input type="hidden" id= 'id' name="id" value="{{session('id')}}">
+
+                        <input type="hidden" id= 'idUsuaria' name="idUsuaria" value="{{ session('id') }}"> 
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                            <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('DDD') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{session('email')}}" required autocomplete="email">
+                                <input id="ddd" type="number" maxlength="2" class="form-control @error('ddd') is-invalid @enderror" name="ddd" value="{{ old('ddd') }}" required autocomplete="celular" autofocus>
 
-                                @error('email')
+                                @error('ddd')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -43,33 +43,26 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Senha') }}</label>
+                            <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="celular" type="number" maxlength="9" class="form-control @error('celular') is-invalid @enderror" name="celular" value="{{ old('celular') }}" required autocomplete="celular" autofocus>
 
-                                @error('password')
+                                @error('celular')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-                        
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme a senha') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
+                        <input type="hidden" id= 'idUsuaria' name="idUsuaria" value="{{ session('id') }}"> 
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Cadastrar') }}
                                 </button>
-                                
                             </div>
                         </div>
                     </form>
@@ -78,5 +71,4 @@
         </div>
     </div>
 </div>
-
 @endsection

@@ -53,7 +53,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Cadastrar-se</a>
+                                    <a class="nav-link" href="{{ route('formulario.index') }}">Cadastrar-se</a>
                                 </li>
                             @endif
                         @else

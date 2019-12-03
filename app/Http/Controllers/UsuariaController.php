@@ -64,8 +64,9 @@ class UsuariaController extends Controller
             'email' => $dataform['email']
         );
         */
-        $request->session()->get('id', $insert->id);
-        $request->session()->get('email', $insert->email);
+        $request->session()->put('id', $insert->id);
+        $request->session()->put('email', $dataform['email']);
+        $request->session()->put('nome', $dataform['nome']);
         //return session()->all();
         //$dataform2['idUsuaria'] = $usuaria->id;
         //$user->create($dataform);

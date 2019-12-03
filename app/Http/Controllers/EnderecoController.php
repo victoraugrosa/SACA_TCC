@@ -32,7 +32,7 @@ class EnderecoController extends Controller
      */
     public function create()
     {
-        //
+        return view ('cadastro_endereco_usuaria');
     }
 
     /**
@@ -41,9 +41,12 @@ class EnderecoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Endereco $endereco)
     {
-        //
+        $dataform3 = $request->all();
+        $insert3 = $endereco->create($dataform3);
+
+        return redirect()->route('guardiao.create');
     }
 
     /**

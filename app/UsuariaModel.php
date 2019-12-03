@@ -25,4 +25,8 @@ class UsuariaModel extends Model
         return $this->hasOne("App\Contato", 'idUsuaria');
 
     }
+    public function endereco(){
+        return $this->hasOne("App\Endereco", 'idUsuaria');
+
+    }
 }

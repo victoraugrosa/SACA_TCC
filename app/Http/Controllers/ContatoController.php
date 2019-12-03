@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Contato;
+use App\UsuariaModel;
 
 class ContatoController extends Controller
 {
@@ -44,8 +45,9 @@ class ContatoController extends Controller
     public function store(Request $request, Contato $contato)
     {
         $dataform2 = $request->all();
-        $dataform2['idUsuaria'] = 1;
-        $insert = $usuaria->create($dataform);
+        $insert2 = $contato->create($dataform2);
+
+        return redirect()->route('endereco.create');
     }
 
     /**
