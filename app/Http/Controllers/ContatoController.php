@@ -32,7 +32,7 @@ class ContatoController extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastro_contato_usuaria');
     }
 
     /**
@@ -41,9 +41,11 @@ class ContatoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Contato $contato)
     {
-        //
+        $dataform2 = $request->all();
+        $dataform2['idUsuaria'] = 1;
+        $insert = $usuaria->create($dataform);
     }
 
     /**

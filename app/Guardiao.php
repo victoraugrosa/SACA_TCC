@@ -15,7 +15,4 @@ class Guardiao extends Model
     public function usuaria(){
         return $this->belongsTo("App\Usuaria", 'idUsuaria');
     }
-    public function contato(){
-        return $this->hasOne("App\Contato", 'idGuardiao');
-    }
 }

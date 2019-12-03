@@ -17,6 +17,8 @@ class CriarTabelaGuardiao extends Migration
             $table->bigIncrements('id');
 
             $table->string('nome', 200);
+            $table->char('ddd', 2);
+            $table->char('celular', 9);
             
 
             $table->timestamps();

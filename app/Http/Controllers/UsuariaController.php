@@ -19,11 +19,12 @@ class UsuariaController extends Controller
     public function __construct(UsuariaModel $usuaria)
     {
         $this->usuaria = $usuaria;
+        
     }
 
     public function formulario()
     {    
-        //return view('cadastro_inic');
+        
     }
 
     public function adm_home()
@@ -53,12 +54,25 @@ class UsuariaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request , UsuariaModel $usuaria)
-    {
+    {   
         $dataform = $request->all();
         $dataform['tipo_user'] = 1;
         $insert = $usuaria->create($dataform);
-        $nome = $dataform['nome'];
-        return redirect()->route('register')->with(array('name1'=>$nome));
+        /*$dados = array(
+            'name' => $dataform['nome'],
+            'id' => $usuaria->id,
+            'email' => $dataform['email']
+        );
+        */
+        $request->session()->get('id', $insert->id);
+        $request->session()->get('email', $insert->email);
+        //return session()->all();
+        //$dataform2['idUsuaria'] = $usuaria->id;
+        //$user->create($dataform);
+
+        return redirect()->route('contato.create');
+        //return view('auth\register', compact('dados'));
+        //return UsuariaModel::all();
     }
 
     /**
@@ -69,7 +83,7 @@ class UsuariaController extends Controller
      */
     public function show($id)
     {
-        //
+        return "Teste";
     }
 
     /**

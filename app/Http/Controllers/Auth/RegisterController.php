@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\UsuariaModel;
 
 //adicionados
 use Illuminate\Http\Request;
@@ -41,6 +42,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        
     }
 
     /**
@@ -66,16 +68,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $request = new Request;
+        $id = $request->all();
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'idUsuaria'=> $data['id']
         ]);
     }
 
-    public function prox_form(Request $request)
-    {
-        //$route = Route::formulario();
-        return redirect()->route('formulario');
-    }
 }

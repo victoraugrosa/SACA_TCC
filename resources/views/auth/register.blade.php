@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -15,7 +16,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ session('name1') }}" required autocomplete="name" autofocus>
+                                <input id="name"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -25,11 +26,13 @@
                             </div>
                         </div>
 
+                        <input type="hidden" id= 'id' name="id" value="{{UsuariaModel::all()->id->where(session('id'))}}">
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -52,7 +55,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme a senha') }}</label>
 
@@ -66,9 +69,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Cadastrar') }}
                                 </button>
-                                <a href="{{route('prox_form')}}">
-                                    {{ __('Teste') }}
-                                </a>
+                                
                             </div>
                         </div>
                     </form>
@@ -77,4 +78,5 @@
         </div>
     </div>
 </div>
+
 @endsection

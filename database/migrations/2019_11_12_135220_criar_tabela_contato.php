@@ -19,6 +19,9 @@ class CriarTabelaContato extends Migration
             $table->string('email', 200);
             $table->char('ddd', 2);
             $table->char('celular', 9);
+
+            $table->bigInteger('idUsuaria')->unsigned();
+            $table->foreign('idUsuaria')->references('id')->on('usuaria')->onDelete('cascade');
             
 
             $table->timestamps();
