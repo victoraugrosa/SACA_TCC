@@ -26,10 +26,8 @@
                         </div>
 
 
-                        <input type="hidden" id= 'idUsuaria' name="idUsuaria" value="{{ session('id') }}"> 
-
                         <div class="form-group row">
-                            <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('DDD') }}</label>
+                            <label for="ddd" class="col-md-4 col-form-label text-md-right">{{ __('DDD') }}</label>
 
                             <div class="col-md-6">
                                 <input id="ddd" type="number" maxlength="2" class="form-control @error('ddd') is-invalid @enderror" name="ddd" value="{{ old('ddd') }}" required autocomplete="celular" autofocus>
@@ -58,12 +56,23 @@
 
                         <input type="hidden" id= 'idUsuaria' name="idUsuaria" value="{{ session('id') }}"> 
 
+     
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
+                            @if($botao == 0)
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Cadastrar') }}
+                                    {{ __('Cadastrar + Guardiões') }}
                                 </button>
+                            @else
+                                <button type="button" class="btn btn-primary">
+                                    <a href="{{route('register')}}" style="text-decoration:none; color:white;">
+                                    {{ __('Próximo passo') }}
+                                    </a>
+                                </button>
+
+                            @endif
                             </div>
+                           
                         </div>
                     </form>
                 </div>

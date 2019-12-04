@@ -10,6 +10,8 @@ class Guardiao extends Model
     protected $fillable = [
         'id', 
         'nome',
+        'ddd',
+        'celular',
         'idUsuaria'
     ];
     public function usuaria(){

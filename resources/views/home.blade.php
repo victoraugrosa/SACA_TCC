@@ -52,6 +52,12 @@
       <a class="nav-link btn btn-outline-danger" style="color: black; margin-bottom:5px;" id="v-pills-settings-tab" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Conta</a>
     </div>
   </div>
+
+  @if(Route::has('guadiao.edit'))
+  <main class="py-4">
+            @yield('content')
+  </main>
+  @else
   
   <div class="col-10">
   <button onclick="getLocation(); check()"  data-toggle="modal" data-target="#ModalDenuncia">Teste</button>
@@ -133,4 +139,5 @@
     </div>
 </div>
 -->
+@endif
 @endsection

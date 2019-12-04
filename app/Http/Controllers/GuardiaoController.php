@@ -33,7 +33,7 @@ class GuardiaoController extends Controller
      */
     public function create()
     {
-        return view('cadastrar_guardiao.blade.php');
+        return view('cadastrar_guardiao');
     }
 
     /**
@@ -42,9 +42,19 @@ class GuardiaoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Guardiao $guardiao)
     {
-        //
+        if(Guardiao::all()->where('idUsuaria', session('id'))->count()<=3){
+            $dataform4 = $request->all();
+            $insert4 = $guardiao->create($dataform4);
+            $insert4->save();
+            $botao = 0;
+            return view ('cadastrar_guardiao', compact('botao', $botao) );
+        }
+        else{
+            $botao = 1;
+            return view ('cadastrar_guardiao', compact('botao', $botao));
+        }
     }
 
     /**
@@ -66,7 +76,7 @@ class GuardiaoController extends Controller
      */
     public function edit($id)
     {
-        return view('editar_guardiao.blade.php');
+        return view('editar_guardiao');
     }
 
     /**
