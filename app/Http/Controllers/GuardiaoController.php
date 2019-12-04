@@ -33,7 +33,8 @@ class GuardiaoController extends Controller
      */
     public function create()
     {
-        return view('cadastrar_guardiao');
+        $botao = 0;
+        return view('cadastrar_guardiao',compact('botao', $botao));
     }
 
     /**
@@ -44,14 +45,14 @@ class GuardiaoController extends Controller
      */
     public function store(Request $request, Guardiao $guardiao)
     {
-        if(Guardiao::all()->where('idUsuaria', session('id'))->count()<=3){
+        if(Guardiao::all()->where('idUsuaria', session('id'))->count()!=3){
             $dataform4 = $request->all();
             $insert4 = $guardiao->create($dataform4);
             $insert4->save();
-            $botao = 0;
-            return view ('cadastrar_guardiao', compact('botao', $botao) );
+            return view ('cadastrar_guardiao', compact('botao', $botao = 0) );
         }
         else{
+            
             $botao = 1;
             return view ('cadastrar_guardiao', compact('botao', $botao));
         }
@@ -65,7 +66,9 @@ class GuardiaoController extends Controller
      */
     public function show($id)
     {
-        //
+        $guardiao [] = array(Guardiao::where('idUsuaria',$id)->get());
+        return $guardiao['id'];
+       //return Guardiao::where('idUsuaria',$id)->get();
     }
 
     /**
@@ -86,9 +89,25 @@ class GuardiaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,  $id)
     {
-        //
+       /* $dataform = $request->all();
+        
+        $guardiao = $this->guardiao->find($id);
+
+        $update = $guardiao->update($dataform);
+
+        if ($update){
+            return redirect()->route('guardiao.edit');
+        }else{
+            return redirect()->echo ("Falha");
+
+        }
+
+        */
+        $guardiao = $this->guardiao->all()->where('idUsuaria',$id)->get();
+        return Guardiao::where('idUsuaria',$id)->get();
+
     }
 
     /**
