@@ -48,8 +48,8 @@
   <div class="col-1 bg-white" style="padding:5px; border-width:1px; border-style:solid; border-radius:20px; border-color:black;">
     <div class="nav flex-column nav-pills" style="margin-top: 10px; margin-bottom: 10px;"id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link d-inline-flex justify-content-center btn btn-outline-danger btn-responsive" style="color: black; margin-bottom:5px;" id="v-pills-home-tab" href="{{route('home')}}" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-      <a class="nav-link btn btn-outline-danger" style="color: black; margin-bottom:5px;" id="v-pills-profile-tab"  href="{{route('guardiao.show', Auth::user()->idUsuaria)}}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Guardiões</a>
-      <a class="nav-link btn btn-outline-danger" style="color: black; margin-bottom:5px;" id="v-pills-settings-tab" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Conta</a>
+      <a class="nav-link btn btn-outline-danger" style="color: black; margin-bottom:5px;" id="v-pills-profile-tab"  href="{{route('guardiao.show', Auth::user()->idUsuaria)}}" role="tab"  aria-selected="true">Guardiões</a>
+      <a class="nav-link btn btn-outline-danger" style="color: black; margin-bottom:5px;" id="v-pills-settings-tab" href="{{route('formulario.show', Auth::user()->idUsuaria)}}" role="tab"  aria-selected="true">Conta</a>
     </div>
   </div>     
 
@@ -61,9 +61,12 @@
 </div>
 
 <div class="row" style="text-align: center; margin-top:10%; margin-left:10px; font-size:18px;">
-<div class="col-10">
+<div class="col-1 bg-white">
+</div>
+<div class="col-30">
     <p id="error_text"></p>
     <div id="viewmap"></div>
+</div>
 </div>
 
 <div class="modal fade" id="ModalDenuncia" tabindex="-1" role="dialog" aria-labelledby="TituloModal" aria-hidden="true">
@@ -109,6 +112,7 @@
     </div>
 
   </div>
+
 
 
 </div>

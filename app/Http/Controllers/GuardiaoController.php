@@ -102,23 +102,31 @@ class GuardiaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  $id)
+    public function update(Request $request,  $id, $guardiao)
     {
-        $dataform = $request->all();
-        
-        $guardiao = $this->guardiao->find($dataform['id']);
+        $update = Guardiao::where('id', $id)->update($guard);
 
-        $update = $guardiao->update($dataform);
-
-        if ($update){
-            return $dataform['ddd'];//redirect()->route('guardiao.show', $id);
+        if ($guardiao){
+            return redirect()->route('guardiao.show', Auth::user()->idUsuaria );
         }else{
             return redirect()->echo ("Falha");
 
         }
+        /*$request->validate([
+            'nome'=>'required',
+            'ddd'=>'required',
+            'celular'=>'required'
+        ]);
 
-        //$guardiao = $this->guardiao->all()->where('idUsuaria',$id)->get();
-        //return Guardiao::where('idUsuaria',$id)->get();
+        $guardiao = Guardiao::find($id);
+
+        $guardiao->nome =  $request->get('nome');
+        $guardiao->ddd = $request->get('ddd');
+        $guardiao->celular = $request->get('celular');
+        $guardiao->save();
+            
+        redirect()->route('guardiao.show', Auth::user()->idUsuaria );
+        */
 
     }
 

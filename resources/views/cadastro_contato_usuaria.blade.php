@@ -28,7 +28,7 @@
                         <input type="hidden" id= 'idUsuaria' name="idUsuaria" value="{{ session('id') }}"> 
 
                         <div class="form-group row">
-                            <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('DDD') }}</label>
+                            <label for="ddd" class="col-md-4 col-form-label text-md-right">{{ __('DDD') }}</label>
 
                             <div class="col-md-6">
                                 <input id="ddd" type="number" maxlength="2" class="form-control @error('ddd') is-invalid @enderror" name="ddd" value="{{ old('ddd') }}" required autocomplete="celular" autofocus>

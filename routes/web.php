@@ -27,6 +27,7 @@ Route::resource('denuncia', 'DenunciaController');
 Route::resource('audio', 'AudioController');
 Route::resource('localizacao', 'LocalizacaoController');
 
+
 Route::get('/prox_form', 'Auth\RegisterController@prox_form')->name('prox_form');
 
 Route::get('/home_adm', 'UsuariaController@adm_home')->name('home_adm');

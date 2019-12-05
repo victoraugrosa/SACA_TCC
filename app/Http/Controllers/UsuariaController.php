@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\UsuariaModel;
+use App\Contato;
+use App\Endereco;
 
 class UsuariaController extends Controller
 {
@@ -84,7 +86,10 @@ class UsuariaController extends Controller
      */
     public function show($id)
     {
-        return "Teste";
+        $contato = Contato::all()->where('idUsuaria',$id);
+        $endereco = Endereco::all()->where('idUsuaria',$id);
+        //return Guardiao::all()->where('idUsuaria',$id);
+        return view('editar_conta', compact(['endereco', $endereco], ['contato', $contato]));
     }
 
     /**
