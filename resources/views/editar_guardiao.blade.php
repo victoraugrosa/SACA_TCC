@@ -48,7 +48,7 @@
   <div class="col-1 bg-white" style="padding:5px; border-width:1px; border-style:solid; border-radius:20px; border-color:black;">
     <div class="nav flex-column nav-pills" style="margin-top: 10px; margin-bottom: 10px;"id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link d-inline-flex justify-content-center btn btn-outline-danger btn-responsive" style="color: black; margin-bottom:5px;" id="v-pills-home-tab" href="{{route('home')}}" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-      <a class="nav-link btn btn-outline-danger" style="color: black; margin-bottom:5px;" id="v-pills-profile-tab"  href="{{route('guardiao.edit', Auth::user()->id)}}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Guardiões</a>
+      <a class="nav-link btn btn-outline-danger" style="color: black; margin-bottom:5px;" id="v-pills-profile-tab"  href="{{route('guardiao.show', Auth::user()->idUsuaria)}}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Guardiões</a>
       <a class="nav-link btn btn-outline-danger" style="color: black; margin-bottom:5px;" id="v-pills-settings-tab" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Conta</a>
     </div>
   </div>     
@@ -58,43 +58,71 @@
 <table class="table table-striped">
   <thead>
     <tr>
-    <form method="POST" action="{{ route('guardiao.update', Auth::user()->id) }}">
-    {!!method_field('PUT')!!}
-      <th scope="col">
-        <input id="nome"  type="text" class="form-control @error('name') is-invalid @enderror" value=""name="nome" required autocomplete="nome" autofocus>
-      </th>
-      <th scope="col">
-        <input id="ddd" type="number" maxlength="2" class="form-control @error('ddd') is-invalid @enderror" name="ddd" value="{{ old('ddd') }}" required autocomplete="ddd" autofocus>
-      </th>
-      <th scope="col">
-        <input id="celular" type="number" maxlength="9" class="form-control @error('celular') is-invalid @enderror" name="celular" value="{{ old('celular') }}" required autocomplete="celular" autofocus>
-      </th>
+      <th scope="col">Nome</th>
+      <th scope="col">DDD</th>
+      <th scope="col">Celular</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+  <tr>
+    <form method="POST" action="{{ route('guardiao.update', Auth::user()->idUsuaria) }}">
+    <input type="hidden" name="_token" value="{ { { csrf_token() } } }">
+    {!!method_field('PUT')!!}
+      <th scope="col">
+        <input id="nome"  type="text" class="form-control @error('name') is-invalid @enderror" value="@foreach($guardiao as $guardiao){{$guardiao->nome}}@endforeach"name="nome" required autocomplete="nome" autofocus>
+      </th>
+        <input type="hidden" id= 'id' name="id" value="{{$guardiao->id}}"> 
+      <th scope="col">
+        <input id="ddd" type="number" maxlength="2" class="form-control @error('ddd') is-invalid @enderror" name="ddd" value="{{$guardiao->ddd}}" required autocomplete="ddd" autofocus>
+      </th>
+      <th scope="col">
+        <input id="celular" type="number" maxlength="9" class="form-control @error('celular') is-invalid @enderror" name="celular" value="{{$guardiao->celular}}" required autocomplete="celular" autofocus>
+      </th>
+      </form>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+    <form method="POST" action="{{ route('guardiao.update', Auth::user()->idUsuaria) }}">
+      <th scope="col">
+        <input id="nome"  type="text" class="form-control @error('name') is-invalid @enderror" value="{{$guardiao->nome}}"name="nome" required autocomplete="nome" autofocus>
+      </th>
+        <input type="hidden" id= 'id' name="id" value="{{$guardiao->id}}"> 
+      <th scope="col">
+        <input id="ddd" type="number" maxlength="2" class="form-control @error('ddd') is-invalid @enderror" name="ddd" value="{{$guardiao->ddd}}" required autocomplete="ddd" autofocus>
+      </th>
+      <th scope="col">
+        <input id="celular" type="number" maxlength="9" class="form-control @error('celular') is-invalid @enderror" name="celular" value="{{$guardiao->celular}}" required autocomplete="celular" autofocus>
+      </th>
+    </form>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+
+
+    <form id="fguard1" action="{{ route('guardiao.update', Auth::user()->idUsuaria) }}" class="form" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+     {{ csrf_field() }}
+      
+      <th scope="col">
+        <input id="nome"  type="text" class="form-control @error('name') is-invalid @enderror" value="{{$guardiao->nome}}"name="nome" required autocomplete="nome" autofocus>
+      </th>
+       <input type="hidden" id= 'id' name="id" value="{{$guardiao->id}}"> 
+      <th scope="col">
+        <input id="ddd" type="number" maxlength="2" class="form-control @error('ddd') is-invalid @enderror" name="ddd" value="{{$guardiao->ddd}}" required autocomplete="ddd" autofocus>
+      </th>
+      <th scope="col">
+        <input id="celular" type="number" maxlength="9" class="form-control @error('celular') is-invalid @enderror" name="celular" value="{{$guardiao->celular}}" required autocomplete="celular" autofocus>
+      </th>
+      <th scope="col">
+        <button type="submit" form="fguard1" class="btn btn-primary">
+         {{ __('Editar Guardiao') }}
+        </button>
+      </th>
+      </form>
     </tr>
   </tbody>
 </table>
 
 
-    <a href="{{ route('guardiao.show', Auth::user()->id) }}" style="text-decoration:none; color:black;">
+    <a href="{{ route('guardiao.show', Auth::user()->idUsuaria) }}" style="text-decoration:none; color:black;">
     {{ __('TESTE') }}
     </a>
 

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Guardiao;
+use App\User;
+
+//use Illuminate\Support\Arr;
 
 class GuardiaoController extends Controller
 {
@@ -66,9 +69,17 @@ class GuardiaoController extends Controller
      */
     public function show($id)
     {
-        $guardiao [] = array(Guardiao::where('idUsuaria',$id)->get());
-        return $guardiao['id'];
-       //return Guardiao::where('idUsuaria',$id)->get();
+        //$guardiao[3] = array(Guardiao::all()->where('idUsuaria',$id));
+        //return $guardiao->key();
+        //$guardiao = Guardiao::all();
+        //foreach ( $guardiao as $gua ) {
+        //    echo " Nome: {$gua->nome} <br>";
+        //}
+        //return()
+
+        $guardiao = Guardiao::all()->where('idUsuaria',$id);
+        //return Guardiao::all()->where('idUsuaria',$id);
+        return view('editar_guardiao', compact('guardiao', $guardiao));
     }
 
     /**
@@ -79,7 +90,9 @@ class GuardiaoController extends Controller
      */
     public function edit($id)
     {
-        return view('editar_guardiao');
+        //$guardiao = Guardiao::all()->where('idUsuaria',$id);
+
+        //return view('editar_guardiao', compact('guardiao', $guardiao));
     }
 
     /**
@@ -91,22 +104,21 @@ class GuardiaoController extends Controller
      */
     public function update(Request $request,  $id)
     {
-       /* $dataform = $request->all();
+        $dataform = $request->all();
         
-        $guardiao = $this->guardiao->find($id);
+        $guardiao = $this->guardiao->find($dataform['id']);
 
         $update = $guardiao->update($dataform);
 
         if ($update){
-            return redirect()->route('guardiao.edit');
+            return $dataform['ddd'];//redirect()->route('guardiao.show', $id);
         }else{
             return redirect()->echo ("Falha");
 
         }
 
-        */
-        $guardiao = $this->guardiao->all()->where('idUsuaria',$id)->get();
-        return Guardiao::where('idUsuaria',$id)->get();
+        //$guardiao = $this->guardiao->all()->where('idUsuaria',$id)->get();
+        //return Guardiao::where('idUsuaria',$id)->get();
 
     }
 
