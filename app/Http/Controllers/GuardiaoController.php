@@ -48,7 +48,7 @@ class GuardiaoController extends Controller
      */
     public function store(Request $request, Guardiao $guardiao)
     {
-        if(Guardiao::all()->where('idUsuaria', session('id'))->count()!=3){
+        if(Guardiao::all()->where('idUsuaria', session('id'))->count()<3){
             $dataform4 = $request->all();
             $insert4 = $guardiao->create($dataform4);
             $insert4->save();

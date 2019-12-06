@@ -44,6 +44,7 @@
 
 </script>
 
+
 <div class="row" style="text-align: center; margin-top:10%; margin-left:5px; font-size:18px;">
   <div class="col-1 bg-white" style="padding:5px; border-width:1px; border-style:solid; border-radius:20px; border-color:black;">
     <div class="nav flex-column nav-pills" style="margin-top: 10px; margin-bottom: 10px;"id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -55,8 +56,13 @@
 
   
   <div class="col-10">
-  <button onclick="getLocation(); check()"  data-toggle="modal" data-target="#ModalDenuncia">Teste</button>
-  <br>
+    <button id="emergencia" onclick="getLocation(); check()"  data-toggle="modal" data-target="#ModalDenuncia">HELP</button>
+    <br>
+            <!--<input  id='lat_inic' name="lat_inic" value="">
+            <input type="hidden" id= 'idUsers' name="idUsers" value="{{Auth::user()->id}}"> 
+            <input   id='long_inic' name="long_inic" value="">-->
+
+
   </div>
 </div>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Denuncia;
+use Carbon\Carbon;
 
 class DenunciaController extends Controller
 {
@@ -32,7 +33,8 @@ class DenunciaController extends Controller
      */
     public function create()
     {
-        //
+      
+        
     }
 
     /**
@@ -41,9 +43,25 @@ class DenunciaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Denuncia $denuncia)
     {
-        //
+       /* $dataform = $request->all();
+        $dataform1['tipo_violencia'] = NULL;
+        $dataform1['date_time_fim'] = NULL;
+        $dataform1['idUsers'] = Auth::user()->id;
+        
+        $insert = $denuncia->create($dataform1);
+
+        if($insert){
+            return "Amem!SALvo";
+        }
+        */
+        $dataform = $request->all();
+        Denuncia::create($dataform);
+        return redirect()->route('home');
+
+
+
     }
 
     /**

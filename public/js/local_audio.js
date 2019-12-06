@@ -5,7 +5,7 @@ var recorder;
 var recordedChunks = [];
 window.onload = function () {
         //helpAudio = document.getElementById('help');
-        helpMap = document.getElementById('help');
+        helpMap = document.getElementById('emergencia');
 
         // get audio stream from user's mic
         navigator.mediaDevices.getUserMedia({
@@ -38,6 +38,9 @@ function getLocation(){
     texto.innerHTML = "Navegador não tem suporte a Geolocalização";
   }
 }
+
+
+
 
 function showPosition(position){
   lati=position.coords.latitude;
@@ -114,7 +117,6 @@ function stopRecording() {
   recorder.stop();
 
     startRecording();
-  
 
 }
 
@@ -127,7 +129,7 @@ function download() {
   document.body.appendChild(audiofile);
   //audiofile.style = 'display: none';
   audiofile.href = url;
-  audiofile.download = 'audioWas.webm';
+  audiofile.download = 'audioSACA.webm';
   audiofile.click();
   window.URL.revokeObjectURL(url);
 }

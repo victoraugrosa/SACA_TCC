@@ -41,9 +41,17 @@ class LocalizacaoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Localizacao $localizacao)
     {
-        //
+        $dataform = $request->all();
+        $dataform['long_fim'] = 0;
+        $dataform['lat_fim'] = 0;
+        $dataform['idUsers'] = Auth::user()->id;
+        $insert = $localizacao->create($dataform);
+
+        if($insert){
+            return $dataform['lat_inic'];
+        }
     }
 
     /**
@@ -54,7 +62,7 @@ class LocalizacaoController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

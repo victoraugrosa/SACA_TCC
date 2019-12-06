@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/localizacao.js') }}"></script>
+    <script src="{{ asset('js/local_audio.js') }}"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT0fxqbrwBLI6dkmMDbmNfQFJ3KjjFBpM&callback=initMap"
   type="text/javascript"></script>
     
